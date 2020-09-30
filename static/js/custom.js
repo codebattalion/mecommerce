@@ -42,6 +42,14 @@ $(".usercard").hover(function () {
   $(this).toggleClass("usercard-open");
 });
 
+$(".dropdown--trigger").hover(function () {
+  $(".dropdown").toggleClass("dropdown-open");
+});
+
+$(".dropdown").hover(function () {
+  $(".dropdown").toggleClass("dropdown-open");
+});
+
 $(".nav--trigger").click(function () {
   $(".nav__bar").toggleClass("nav--open");
   $(".header2").toggleClass("header--open");

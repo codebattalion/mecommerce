@@ -237,7 +237,7 @@ body {
     list-style: none;
     color: inherit; }
     .nav__bar--list {
-      display: inline;
+      display: inline-block;
       padding: 0 10px; }
     .nav__bar--link {
       color: inherit;
@@ -256,23 +256,64 @@ body {
     color: inherit; }
     .nav__icons--list {
       display: inline;
+      font-size: 2.4rem;
       padding: 0 5px; }
     .nav__icons a {
       color: inherit;
       text-decoration: none;
       font-size: 2.4rem; }
-    .nav__icons--cart {
-      position: relative;
-      display: inline;
-      font-size: 2.4rem;
-      color: inherit;
-      text-decoration: none;
-      cursor: pointer; }
+
+.nav-droper {
+  position: relative;
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer; }
 
 .dropdown {
-  position: absolute; }
+  position: absolute;
+  top: 25px;
+  right: -130px;
+  width: 400px;
+  height: auto;
+  padding: 2rem 0rem;
+  background: #fff;
+  cursor: default;
+  transition: all 0.2s ease-out;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between; }
   .dropdown--trigger {
-    position: relative; }
+    position: relative;
+    left: 0;
+    top: 0;
+    display: inline-block; }
+  .dropdown::before {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 12px;
+    background: #fff;
+    top: -10px;
+    left: 49%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+  .dropdown__container {
+    border-top: 1px solid #eee;
+    padding-top: 10px; }
+    .dropdown__container a {
+      font-family: "Open Sans", sans-serif;
+      display: block;
+      color: #333;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      transition: all 0.2s ease-out; }
+      .dropdown__container a:hover {
+        color: #eb446e;
+        transform: translateY(-1px); }
 
 .cart {
   height: auto;
@@ -542,6 +583,13 @@ body {
   transition: all 0.2s ease-out;
   box-shadow: 4px 2px 12px rgba(0, 0, 0, 0.2);
   padding: 15px 30px 30px 30px;
+  opacity: 1;
+  visibility: visible; }
+
+.dropdown-open {
+  transition: all 0.2s ease-out;
+  box-shadow: 4px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 2rem 3rem;
   opacity: 1;
   visibility: visible; }
 
