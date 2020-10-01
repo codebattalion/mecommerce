@@ -10,7 +10,6 @@
   color: #333;
   transition: all 0.3s ease-out;
   background: transparent;
-  position: fixed;
 
   &--trigger {
     position: absolute;
@@ -101,7 +100,7 @@
 
   position: absolute;
   top: 25px;
-  right: -130px;
+  right: -140px;
   width: 400px;
   height: auto;
   padding: 2rem 0rem;
@@ -123,7 +122,7 @@
       text-decoration: none;
       font-size: 1.2rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 10px;
       text-transform: uppercase;
       transition: all 0.2s ease-out;
       &:hover {
@@ -363,11 +362,8 @@
 @media only screen and (max-width: 1024px) {
   .nav {
     height: 70px !important;
-    background: #fff !important;
     padding: 0 20px 0 70px;
     z-index: 999;
-    color: #333 !important;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
     &--trigger {
       display: block;
       cursor: pointer;
@@ -375,10 +371,6 @@
     &__logo {
       & * {
         font-size: 1.8rem;
-        &:before {
-          width: 94px;
-          height: 32px;
-        }
       }
     }
 
@@ -386,11 +378,10 @@
       transition: all 0.3s ease-out;
       position: absolute;
       top: 70px;
-      left: -60%;
+      left: -80%;
       height: 100vh;
       background: #fff;
       box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-
       &--list {
         padding: 10px 40px;
         display: block;
@@ -449,6 +440,37 @@
         }
       }
     }
+  }
+
+  .dropdown {
+    &::before {
+      display: none;
+    }
+
+    position: static;
+    top: none;
+    right: none;
+    width: 300px;
+    height: 0;
+    padding: 0rem;
+    display: none;
+    display: flex;
+    &__container {
+      & a {
+        margin-bottom: 4px;
+
+        &:hover {
+          transform: translateY(0px);
+        }
+      }
+    }
+  }
+  .dropdown-open {
+    transition: all 0.2s ease-out;
+    box-shadow: none !important;
+    padding: 2rem 0rem !important;
+    height: 100%;
+    display: flex;
   }
 }
 .nav--open {

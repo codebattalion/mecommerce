@@ -1,3 +1,10 @@
+.header {
+  position: relative !important;
+  height: 100vh;
+  top: -100px;
+  left: 0;
+}
+
 .header1 {
   height: 100vh;
   position: relative;
@@ -15,22 +22,39 @@
   }
   &__container {
     position: absolute;
-    top: 30%;
-    left: 50%;
+    top: 45%;
+    left: 45%;
     transform: translate(-50%, -50%);
-    width: 90%;
-
+    text-align: left;
+    width: 60%;
     &--title {
-      font-size: 6rem;
-      color: #333;
-      font-weight: 200;
-      line-height: 8rem;
+      font-size: 4rem;
+      color: $font;
+      font-weight: 600;
+      line-height: 5rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
     &--subtitle {
-      font-size: 3rem;
-      color: #555;
-      font-weight: 200;
-      line-height: 6rem;
+      font-size: 8rem;
+      color: $font;
+      font-weight: 700;
+      line-height: 1.1;
+      font-family: Poppins, sans-serif;
+    }
+    &--starting {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $font;
+      text-transform: uppercase;
+      letter-spacing: -0.8px;
+
+      & span {
+        font-size: 3.5rem;
+        position: relative;
+        top: 4px;
+        padding-left: 10px;
+      }
     }
   }
 }
@@ -42,31 +66,110 @@
   background-position: right;
   height: 100vh;
   position: relative;
-  left: 0;
-  top: 0;
+
   transition: all 0.3s ease-out;
   &__container {
     position: absolute;
     top: 45%;
     left: 65%;
     transform: translate(-50%, -50%);
-    width: 50%;
+    text-align: right;
+    width: 40%;
     &--title {
       font-size: 4rem;
       color: #fff;
-      font-weight: 200;
-      line-height: 4rem;
+      font-weight: 600;
+      line-height: 5rem;
+      letter-spacing: 4px;
       text-transform: uppercase;
-      text-align: center;
     }
     &--subtitle {
-      font-size: 2rem;
-      color: rgba($font, 0.8);
-      font-weight: 600;
-      text-align: center;
-      line-height: 5rem;
-      text-transform: uppercase;
+      font-size: 8rem;
+      color: $font;
+      font-weight: 700;
+      line-height: 1.1;
+      font-family: Poppins, sans-serif;
     }
+    &--starting {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $font;
+      text-transform: uppercase;
+      letter-spacing: -0.8px;
+
+      & span {
+        font-size: 3.5rem;
+        position: relative;
+        top: 4px;
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header1 {
+    &--img {
+      top: 200px;
+    }
+    &__container {
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      padding: 0 20px;
+      &--title {
+        font-size: 3rem;
+        font-weight: 600;
+        line-height: 4rem;
+      }
+      &--subtitle {
+        font-size: 6rem;
+      }
+      &--starting {
+        font-size: 1.8rem;
+        & span {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .header2 {
+    background: url("/img/header/pic2.jpg") no-repeat;
+    background-position: center;
+
+    &__container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      text-align: center;
+      width: 100%;
+      padding: 0 20px;
+      &--title {
+        font-size: 3rem;
+        line-height: 4rem;
+        letter-spacing: 3px;
+      }
+      &--subtitle {
+        color: #fff;
+        font-size: 6rem;
+      }
+      &--starting {
+        font-size: 2rem;
+        color: #fff;
+
+        & span {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .prev-arrow {
+    display: none !important;
+  }
+  .next-arrow {
+    display: none !important;
   }
 }
 
@@ -74,4 +177,45 @@
   transition: all 0.3s ease-out;
   position: relative;
   left: 50%;
+}
+.prev-arrow {
+  position: absolute;
+  top: 45%;
+  left: 0px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  color: $font;
+  background: rgba(#eee, 0.2);
+  transition: background, width 0.3s ease-out;
+  &:hover {
+    background: rgba(#eee, 0.6);
+    width: 150px;
+  }
+}
+.next-arrow {
+  position: absolute;
+  top: 45%;
+  right: 0px;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  font-size: 2rem;
+  color: $font;
+  background: rgba(#eee, 0.2);
+  transition: background, width 0.3s ease-out;
+  &:hover {
+    width: 150px;
+    background: rgba(#eee, 0.6);
+  }
+}
+.slick-dots {
+  bottom: 50px;
 }

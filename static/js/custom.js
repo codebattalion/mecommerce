@@ -1,24 +1,13 @@
 // $(window).scroll(function () {
-//   if ($(this).scrollTop() < 30) {
-//       $(".nav").css({
-//           'background': 'transparent',
-//           'height': '100px',
-//           'color': '#333',
-//           'boxShadow': '0px 0px 0px 0px rgba(0,0,0,0.1)'
-
-//       });
-
+//   if ($(this).scrollTop() < 100) {
+//     $(".nav").css({
+//       display: "flex",
+//     });
+//   } else {
+//     $(".nav").css({
+//       display: "none",
+//     });
 //   }
-//   else{
-//       $(".nav").css({
-//           'background': '#fff',
-//           'height': '80px',
-//           'color': '#333',
-//           'boxShadow': '0px 1px 10px 2px rgba(0,0,0,0.1)'
-//       });
-
-//   }
-
 // });
 
 $(".cart-trigger").hover(function () {
@@ -53,4 +42,42 @@ $(".dropdown").hover(function () {
 $(".nav--trigger").click(function () {
   $(".nav__bar").toggleClass("nav--open");
   $(".header2").toggleClass("header--open");
+});
+
+$(".h-slides").slick({
+  dots: true,
+  infinite: true,
+  fade: true,
+  cssEase: "linear",
+  draggable: true,
+  autoplay: true /* this is the new line */,
+  autoplaySpeed: 3000,
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  touchThreshold: 1000,
+  prevArrow: $(".prev-arrow"),
+  nextArrow: $(".next-arrow"),
+});
+
+$(".h-slides").on("beforeChange", function () {
+  $(".header1__container--title").removeClass("animate__animated animate__fadeInDown").hide();
+  $(".header1__container--subtitle").removeClass("animate__animated animate__fadeIn").hide();
+  $(".header1__container--starting").removeClass("animate__animated animate__fadeInUp").hide();
+
+  $(".header2__container--title").removeClass("animate__animated animate__fadeInDown").hide();
+  $(".header2__container--subtitle").removeClass("animate__animated animate__fadeIn").hide();
+  $(".header2__container--starting").removeClass("animate__animated animate__fadeInUp").hide();
+  $(".header2__container--btn").removeClass("animate__animated animate__fadeIn").hide();
+
+  setTimeout(() => {
+    $(".header1__container--title").addClass("animate__animated animate__fadeInDown").show();
+    $(".header1__container--subtitle").addClass("animate__animated animate__fadeIn").show();
+    $(".header1__container--starting").addClass("animate__animated animate__fadeInUp").show();
+
+    $(".header2__container--title").addClass("animate__animated animate__fadeInDown").show();
+    $(".header2__container--subtitle").addClass("animate__animated animate__fadeIn").show();
+    $(".header2__container--starting").addClass("animate__animated animate__fadeInUp").show();
+    $(".header2__container--btn").addClass("animate__animated animate__fadeIn").show();
+  }, 100);
 });
